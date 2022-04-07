@@ -8,13 +8,13 @@ defmodule Apicall.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: Apicall.Worker.start_link(arg)
-      # {Apicall.Worker, arg}
+      Apicall.Results,
+      {Apicall.ApicallQueue, Application.get_env(:apicall, :initial_calls)},
+      Apicall.WorkerSupervisor,
+      {Apicall.Gatherer, Application.get_env(:apicall, :number_of_workers)}
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Apicall.Supervisor]
+    opts = [strategy: :one_for_all, name: Apicall.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end

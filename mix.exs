@@ -15,7 +15,14 @@ defmodule Apicall.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Apicall.Application, []}
+      mod: {Apicall.Application, []},
+      env: [initial_calls: ["a", "b", "c"], number_of_workers: 1],
+      register: [
+        Apicall.Results,
+        Apicall.ApicallQueue,
+        Apicall.Ghetherer,
+        Apicall.WorkerSupervisor,
+      ]
     ]
   end
 
