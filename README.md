@@ -1,21 +1,2 @@
-# Apicall
-
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `apicall` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:apicall, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/apicall>.
-
+# concurrently-api-caller
+My first Elixir app. It solves the problem of calling multiples APIs, concurrently. It uses Elixir micro-services architecture to solve the problem. There are a lot to be done to improve it.
