@@ -10,8 +10,8 @@ defmodule Apicall.Application do
     children = [
       Apicall.Results,
       {Apicall.ApicallQueue, Application.get_env(:apicall, :initial_calls)},
-      Apicall.WorkerSupervisor,
-      {Apicall.Gatherer, Application.get_env(:apicall, :number_of_workers)}
+      {Apicall.Gatherer, Application.get_env(:apicall, :number_of_workers)},
+      Apicall.WorkerSupervisor
     ]
 
     opts = [strategy: :one_for_all, name: Apicall.Supervisor]

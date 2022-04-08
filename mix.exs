@@ -16,12 +16,12 @@ defmodule Apicall.MixProject do
     [
       extra_applications: [:logger],
       mod: {Apicall.Application, []},
-      env: [initial_calls: ["a", "b", "c"], number_of_workers: 1],
+      env: [initial_calls: [["url-a1", "url-a2", "url-a3"], ["url-b1", "url-b2"], ["url-c1"]], number_of_workers: 1],
       register: [
         Apicall.Results,
         Apicall.ApicallQueue,
         Apicall.Ghetherer,
-        Apicall.WorkerSupervisor,
+        Apicall.WorkerSupervisor
       ]
     ]
   end

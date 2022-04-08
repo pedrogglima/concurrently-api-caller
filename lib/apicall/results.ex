@@ -22,6 +22,8 @@ defmodule Apicall.Results do
   def handle_cast({:add, result}, results) do
     results = [result, results]
 
+    IO.puts("Return from batch #{inspect(result)}")
+
     {:noreply, results}
   end
 
